@@ -67,8 +67,24 @@
 
 })();
 
-
-
+/*--------------------------- email js emails--------------------*/
+function SendMail(){
+    var params={
+        from_name : document.getElementById("name").value,
+        email_id : document.getElementById("email").value,
+        subject : document.getElementById("subject").value,
+        message : document.getElementById("message").value
+    }
+    if(params.email_id!=""&&params.message!=""&&params.subject!=""){
+        emailjs.send("service_awy5553", "template_s8i5csm", params).then(function(res){
+            alert("Success!", res.status);
+           // location.replace("index.html");
+        })
+    }
+    
+    
+   
+}
 
 
 
